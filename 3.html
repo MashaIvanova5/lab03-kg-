@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<body>
+		<canvas id = 'lab03' width="500" height="500" style=" border: 5px solid red;
+        height: 70vh;
+        width: 70vh;
+        border-radius: 50%" />
+		<script>
+			let canvas = document.getElementById('lab03');
+			let context = canvas.getContext('2d');
+			
+			var x0 = 250;
+			var y0 = 250;
+			var rad = (-Math.PI/2);
+			var degree = 0;
+			var x=0
+            var y=0
+			function draw(){
+			
+			    context.clearRect(0,0,canvas.width, canvas.height);
+			    context.fillStyle = '#FF4500';
+                for (var r = 0; r <= 250; r++){
+                    x=x0+r*Math.cos(rad);
+                    y=y0+r*Math.sin(rad);
+				    context.fillRect(x, y, 3, 3);
+			    }
+                rad+=0.105
+
+			return;
+			
+		}
+		
+		setInterval(draw, 1000);
+		</script>
+</body>
+</html>
